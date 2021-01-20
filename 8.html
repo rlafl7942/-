@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갬블링 게임</title>
+    <style>
+        div {
+            display:flex;
+            flex-direction: row;
+            width:20%;
+            justify-content:space-around;
+            background-color: lightcoral;
+            border-radius : 5px;
+        }
+        span {
+            justify-content: space-around;
+            font-size: 60px;
+            color : white;
+        }
+    </style>
+    <script>
+        var n1=0,n2=0,n3=0;
+        var list = new Array();
+        function num1(){
+            
+            if (n1==0&n2==0&&n3==0){
+                var p=document.getElementById("n1");
+                var num=Math.floor(Math.random()*3);
+                p.innerHTML=num;
+                n1=1;
+                list[0]=num;
+            }
+        }
+        function num2(){
+            if (n1!=0&&n2==0&&n3==0){
+                var p=document.getElementById("n2");
+                var num=Math.floor(Math.random()*3);
+                p.innerHTML=num;
+                n2=1;
+                list[1]=num;
+            }
+        }
+        function num3(){
+            var flag=0;
+            if (n1!=0&&n2!=0&&n3==0){
+                var p=document.getElementById("n3");
+                var num=Math.floor(Math.random()*3);
+                p.innerHTML=num;
+                n3=1;
+                list[2]=num;
+                var i,j;
+                flag=0;
+                if (list[0]==list[1]&&list[0]==list[2]&&list[1]==list[2]) flag=1;
+                var result=document.getElementById("result");
+                if (flag==0) {
+                        result.innerHTML="fail(click here to do again)";
+                    }
+                else {
+                    result.innerHTML="Success!!(click here to do again)";
+                }
+            }
+        }
+        function restart(){
+            var a=document.getElementById("n1");
+            var b=document.getElementById("n2");
+            var c=document.getElementById("n3");
+            a.innerHTML="0";
+            b.innerHTML="0";
+            c.innerHTML="0";
+            var result=document.getElementById("result");
+            result.innerHTML="";
+            n1=0;
+            n2=0;
+            n3=0;
+            list[0]=0;
+            list[1]=0;
+            list[2]=0;
+        }
+    </script>
+</head>
+<body>
+    <h3>갬블링 게임</h3>
+    <br>
+    <p>각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+    <hr>
+    <div>
+        <span id="n1" onclick="num1()">0</span>
+        <span id="n2" onclick="num2()">0</span>
+        <span id="n3" onclick="num3()">0</span>
+    </div>
+    <h2 id="result" style="color:lightskyblue" onclick="restart()"></h2>
+</body>
+</html>

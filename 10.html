@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10장 오챌</title>
+    <style>
+        div{
+            color:white;
+            position:absolute;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+    <div>*</div>
+
+    <script>
+        var divs=document.getElementsByTagName("div");
+        var timerID=setInterval("doRotate()",100);
+        var topLoc=[];
+        var sum=[];
+        sum.fill(0);
+        for (var i=0;i<divs.length;i++){
+            var left=Math.floor(Math.random()*1200);
+            var Top=Math.floor(Math.random()*600);
+            divs[i].style.left=left+"px";
+            divs[i].style.top=Top+"px";
+            topLoc[i]=Top;
+        }
+        function doRotate(){
+            for (var i=0;i<divs.length;i++){
+                sum[i]++;
+                divs[i].style.top=topLoc[i]+sum[i]+"px";
+                if (topLoc[i]+sum[i]>600) {
+                    topLoc[i]=0;
+                    sum[i]=0;
+                    divs[i].style.top=0+"px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

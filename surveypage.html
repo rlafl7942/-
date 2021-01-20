@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>surveypage</title>
+</head>
+<body>
+    <h3>설문조사</h3>
+    <br>
+    소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.
+    <hr>
+    <label for="grade">
+        학년 : <input type="radio" name="grade" value="1">1학년
+        <input type="radio" name="grade" value="2">2학년
+        <input type="radio" name="grade" value="3">3학년
+        <input type="radio" name="grade" value="4">4학년
+    </label>
+    <br>
+    <label for="sex">
+        성별 : <input type="radio" name="sex" value="m">남
+        <input type="radio" name="sex" value="f">여
+    </label>
+    <br>
+    <label for="part">
+        관심 분야 : <select name="part">
+            <option value="1">웹 프로그래밍</option>
+            <option value="2">앱 프로그래밍</option>
+            <option value="3">게임 개발</option>
+        </select>
+    </label>
+    <br>
+    <label for="job">
+        진로 : <input type="radio" name="job" value="1">개발
+        <input type="radio" name="job" value="2">기획
+        <input type="radio" name="job" value="3">영업
+        <input type="radio" name="job" value="4">창업
+    </label>
+    <br>
+    <label for="talk">
+        남기고 싶은 말 : <br>
+        <textarea cols="50" rows="30">이곳에 입력해주세요.</textarea>
+    </label>
+</body>
+</html>

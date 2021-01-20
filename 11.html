@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11장 오픈챌린지</title>
+</head>
+<body>
+    <h2>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h2>
+    <hr>
+    <form name="input">
+        <label>
+            A : <input type="number" id="A" size="15" value="0"> 명
+        </label>
+        <label>
+            B : <input type="number" id="B" size="15" value="0"> 명
+        </label>
+        <label>
+            C : <input type="number" id="C" size="15" value="0"> 명
+        </label>
+        <label>
+            D : <input type="number" id="D" size="15" value="0"> 명
+        </label>
+        <label>
+            F : <input type="number" id="F" size="15" value="0"> 명
+        </label>
+        <button onclick="fill()">차트그리기</button>
+        <br>
+        <br>
+    </form>
+    <canvas id="myCanvas" width="600" height="600" style="background-color: aliceblue;"></canvas>
+    <script>
+        function fill(){
+            var canvas=document.getElementById("myCanvas");
+            var context=canvas.getContext("2d");
+            var colors=["blue","green","yellow","magenta","red"];
+            var grades=["A","B","C","D","F"];
+        }
+    </script>
+</body>
+</html>

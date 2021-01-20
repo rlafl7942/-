@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript open Challenge 6</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>별 문자 출력하기</h3>");
+        document.write("<hr>");
+        var n=prompt("정수를 입력하세요.");
+        n=parseInt(n);
+
+        var i,j;
+        if (!isNaN(n)){
+        for (i=0;i<n;i++) {
+            for (j=1;j<=i+1;j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+    else {
+        document.write("입력 오류입니다.");
+    }
+
+        
+    </script>
+</body>
+</html>
