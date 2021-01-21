@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-1오챌</title>
+    <style>
+        div{
+            margin-top: 10px;
+            width:150px;
+            height:300px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h3>나의 단어장 모두 출력</h3>
+    <hr>
+    <div>
+    <script>
+        for (var i=0;i<localStorage.length;i++){
+            var key=localStorage.key(i);
+            var val=localStorage.getItem(key);
+            document.write((i+1) + " " + key + " " + val + "<br>");
+        }
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12장 오챌</title>
+</head>
+<body>
+    <h3>나의 단어장 만들기</h3>
+    <hr>
+    <form>
+        <label>
+            영어 <input type="text" id="eng" size="15" value="">
+            <br>
+            한글 <input type="text" id="kor" size="15" value="">
+        </label>
+    </form>
+    <br>
+    <div></div>
+    <br>
+    <button id="save" onclick="store()">단어 저장</button>
+    <button id="find" onclick="retrieve()">영단어 검색</button>
+    <button id="del" onclick="remove()">단어 삭제</button>
+    <button id="whole" onclick="array()">전체 보기</button>
+
+    <script>
+        var eng=document.getElementById("eng");
+        var kor=document.getElementById("kor");
+        function store(){
+            if (localStorage.getItem(eng.value)==null) {
+                localStorage.setItem(eng.value, kor.value); 
+                eng.value="";
+                kor.value="";
+            }
+            else {
+                var ret = confirm(eng.value + "가 이미 있습니다. 수정하시겠습니까?");
+                if (ret==true){
+                    eng.value="";
+                    kor.value="";
+                }
+                else {
+                    alert("수정해야 합니다 :-)");
+                }
+            }
+        }
+        function retrieve(){
+            var word=localStorage.getItem(eng.value);
+            if (localStorage.getItem(eng.value)==null) {
+                alert(eng.value + "는 없는 단어입니다.");
+                eng.value="";
+            }
+            else {
+                var insert=document.getElementsByTagName("div");
+                insert[0].innerHTML=word;
+                eng.value="";
+            }
+        }
+        function remove(){
+            if (localStorage.getItem(eng.value)==null) {
+                alert(eng.value + "는 없는 단어입니다.");
+                eng.value="";
+            }
+            else {
+                localStorage.removeItem(eng.value); 
+                eng.value="";
+            }
+        }
+        function array() {
+            window.open("12-1.html","_blank");
+        }
+    </script>
+</body>
+</html>
